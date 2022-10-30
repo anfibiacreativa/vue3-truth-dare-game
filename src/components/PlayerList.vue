@@ -55,7 +55,10 @@ export default {
             let newPlayerObj = {
                 name: newPlayer.value,
                 cards: [],
-                isActive: false
+                isActive: false,
+                hand: [],
+                score: 0,
+                isWinner: false
             }
             if (newPlayer.value === '') {
                 state.isDuplicated = false;
@@ -96,6 +99,7 @@ export default {
                 state.isMaxPlayers = false;
             }
         }
+
         return { state, addPlayer, removePlayer }
     }
 }

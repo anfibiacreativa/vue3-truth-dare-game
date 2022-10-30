@@ -140,6 +140,11 @@ input[name="card-box"]{
   background-color: var(--vt-c-white-soft)
 }
 
+.card-flipper.isFlipped .button .small {
+  display: block;
+  transition: display 0.5s ease-in-out;
+}
+
 .card-flipper {
   position: relative;
   transition: 0.3s;
@@ -183,6 +188,14 @@ input[name="card-box"]{
   height: 14vh;
   cursor: pointer;
   padding: 5px;
+}
+
+.button.small {
+  height: 5vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
 }
 
 .add,
@@ -256,4 +269,8 @@ input[name="card-box"]{
   display: grid;
   justify-items: stretch;
   gap: 25px;
+}
+
+.isBlock {
+  display: block;
 }

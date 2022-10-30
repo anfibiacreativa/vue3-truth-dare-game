@@ -28,6 +28,21 @@ export const usePlayerStore = defineStore('PlayerStore', {
                     this.playerActive = player.name;
                 }
             })
-        }
+        },
+        addCardToPlayer(card) {
+            this.players.map((player) => {
+                if (player.isActive) {
+                    player.hand.push(card);
+                }
+            })
+        },
+        addScoreToPlayer(score) {
+            this.players.map((player) => {
+                if (player.isActive) {
+                    player.score += score;
+                }
+            })
+        },
+        
     }
 });
