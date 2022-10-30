@@ -48,6 +48,7 @@ export default {
             let type = e.target.value;
             console.log(type, '#type from button');
             let param = 'type=';
+            store.fetchCards(url, param, type);
             axios.post(url, 
                 `${param}${type}`
             ).then(res => {

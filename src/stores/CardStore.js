@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia';
-import items from '@/data/items.json';
 import axios from 'axios';
 
 export const useCardStore = defineStore('CardStore', {
@@ -12,11 +11,15 @@ export const useCardStore = defineStore('CardStore', {
         }
     },
     actions: {
-        async fetchCards({ commit }) {
+        async fetchCards(url, param, type) {
             try {
-                const url = 'api/cards';
-                const response = await axios.get(url)
-                    commit('SET_CARDS', response.data);
+                let body = `${param}${type}`;
+                const response = await axios.post(url, body)
+                .then((response) => {
+                    this.cards = response.data;
+                    console.log(this.cards);
+                })
+
             }
             catch (error) {
                 console.log(error);

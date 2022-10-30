@@ -1,10 +1,9 @@
 <script setup>
-import SearchBox from './components/SearchBox.vue';
 import GetCards from './components/GetCards.vue';
-import { useSearchStore } from '@/stores/SearchStore';
+import { useCardStore } from '@/stores/CardStore';
 import PlayerList from './components/PlayerList.vue';
 
-useSearchStore();
+useCardStore();
 </script>
 
 <template>
