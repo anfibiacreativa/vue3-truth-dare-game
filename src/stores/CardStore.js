@@ -16,7 +16,7 @@ export const useCardStore = defineStore('CardStore', {
         // get all the cards
         async fetchCards(url, body) {
             this.cards = [];
-            this.loading = true;
+            this.loading = true
             try {
                 this.cards = await axios.post(url, body)
                     .then(response => {

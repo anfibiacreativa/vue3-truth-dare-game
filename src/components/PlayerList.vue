@@ -7,10 +7,12 @@
                 <span>＋</span>
             </button>
             <p v-if="state.isDuplicated" class="error">Please choose a different name.</p>
+            <p v-if="state.isMaxPlayers" class="error">Max 4 players!</p>
         </form>
        <ul class="playerlist">
-            <li class="player-item" v-for:="(player, index) in state.playerList" :key="index">
-                {{ player }}
+            <li class="player-item" v-for:="(player, index) in state.playerList" :key="index" v-bind:class="{ 'isActive': player.isActive }">
+                {{ player.name }}
+                <span v-if="player.isActive" class="active">👉 NOW PLAYING</span>
                 <button class="remove" @click="removePlayer(index)">
                     <span>⤬</span>
                 </button>
@@ -25,6 +27,8 @@
 <script>
 
 import { reactive } from 'vue';
+import { storeToRefs } from 'pinia';
+import { usePlayerStore } from '@/stores/PlayerStore';
 
 export default {
     name: 'PlayerList',
@@ -34,6 +38,9 @@ export default {
         }
     },
     setup(props) {
+        const { players, isEmpty } = storeToRefs(usePlayerStore());
+        const { getPlayers, updatePlayers } = usePlayerStore();
+
         const state = reactive({
             index: 0,
             hasPlayers: false,
@@ -45,24 +52,49 @@ export default {
         function addPlayer(e) {
             let newPlayer = document.getElementById('newPlayer');
             console.log('#addPlayer', newPlayer.value);
+            let newPlayerObj = {
+                name: newPlayer.value,
+                cards: [],
+                isActive: false
+            }
             if (newPlayer.value === '') {
                 state.isDuplicated = false;
                 return;
             }
             state.isMaxPlayers = state.playerList.length >= 4 ? true : false;
-            state.isDuplicated = state.playerList.includes(newPlayer.value) ? true : false;
+            state.playerList.map((player) => { 
+                if (newPlayer.value === player.name) {
+                    state.isDuplicated = true;
+                } else {
+                    state.isDuplicated = false;
+                };
+            });
             if (state.isDuplicated || state.isMaxPlayers) {
                 return;
             }
-            state.playerList.push(props.playerName);
+            state.playerList.push(newPlayerObj);
             state.hasPlayers = true;
             // must figure out how to reset this since this is not working
             newPlayer.value = '';
+
+            if (players ==! state.playerList) {
+                let update = new Set([ ...players, ...state.playerList]);
+                console.log(update, '#update');
+                updatePlayers(update);
+            } else {
+                updatePlayers(state.playerList);
+            }
+            if (state.playerList.length === 2) {
+                state.playerList[0].isActive = true;
+            }
         }
 
         function removePlayer(index) {
             console.log('removePlayer');
             state.playerList.splice(index, 1);
+            if (state.playerList.length <= 3) {
+                state.isMaxPlayers = false;
+            }
         }
         return { state, addPlayer, removePlayer }
     }

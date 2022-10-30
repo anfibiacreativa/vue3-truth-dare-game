@@ -1,8 +1,9 @@
 <script setup>
     import { storeToRefs } from 'pinia';
     import { useCardStore } from '@/stores/CardStore';
+    import { usePlayerStore } from '@/stores/PlayerStore';
     import Card from './Card.vue';
-import { onMounted } from 'vue';
+    import { onMounted } from 'vue';
 
     defineProps({
         card: {
@@ -15,6 +16,7 @@ import { onMounted } from 'vue';
 
     const { cards, loading, error } = storeToRefs(useCardStore());
     const { fetchCards } = useCardStore();
+    const { isEmpty, players } = storeToRefs(usePlayerStore());
     const url = '/api/cards';
 
     function getCardList(e) {
@@ -35,19 +37,17 @@ import { onMounted } from 'vue';
 
 <template>
     <div class="panel">
-        <button class="button" value="1" @click="getCardList">
+        <button :disabled="players.length < 2" class="button" value="1" @click="getCardList">
             Say the truth, ok? 🥹
         </button>
-        <button class="button" value="2" @click="getCardList">
+        <button :disabled="players.length < 2" class="button" value="2" @click="getCardList">
             Dare to play! 😈
         </button>
     </div>
-    <template>
-        <ul class="wrapper search-results">
-            {{ cards }}
-            <li v-for="(card, index) of cards" :key="index">
-                <Card v-bind:card=card />
-            </li>  
-        </ul>
-    </template>
+    <p class="error" v-if="players.length < 2">Add at least 2 players to get cards!</p>
+    <ul class="wrapper card-results">
+        <li class="card-item" v-for="(card, index) of cards" :key="index">
+            <Card v-bind:card=card />
+        </li>  
+    </ul>
 </template>

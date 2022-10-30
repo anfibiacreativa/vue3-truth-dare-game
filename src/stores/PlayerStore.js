@@ -1,11 +1,26 @@
 import { defineStore } from 'pinia';
-import items from '@/data/items.json';
 
 export const usePlayerStore = defineStore('PlayerStore', {
-    state: () => {
-        return {
-            items,
-        };
+    state: () => ({
+        players: [],
+        playerActive: '',
+        isEmpty: true
+    }),
+    getters: {
+        getPlayers: (state) => {
+            return state.players;
+        }
     },
-
+    actions: {
+        updatePlayers(players) {
+            this.players = players;
+            this.isEmpty = false;
+        },
+        activatePlayer(player) {
+            this.playerActive = player;
+        },
+        deactivatePlayer() {        
+            this.playerActive = '';
+        }
+    }
 });

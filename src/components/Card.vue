@@ -30,7 +30,6 @@ export default {
         });
 
         function flipCard(e) {
-            console.log(e.target, '#e.target Im clicked');
             state.isFlipped = !state.isFlipped;
         }
         return { state, flipCard }
