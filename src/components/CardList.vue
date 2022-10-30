@@ -3,7 +3,6 @@
     import { useCardStore } from '@/stores/CardStore';
     import { usePlayerStore } from '@/stores/PlayerStore';
     import Card from './Card.vue';
-    import { onMounted } from 'vue';
 
     defineProps({
         card: {
@@ -11,15 +10,18 @@
         },
         cards: {
             type: Array
-        }
+        },
+        isPlaying: false
     });
 
     const { cards, loading, error } = storeToRefs(useCardStore());
     const { fetchCards } = useCardStore();
-    const { isEmpty, players } = storeToRefs(usePlayerStore());
+    const { getActivePlayer } = usePlayerStore(); 
+    const { players, playerActive } = storeToRefs(usePlayerStore());
     const url = '/api/cards';
 
     function getCardList(e) {
+        getActivePlayer();
         let type = e.target.value;
         console.log(type, '#type from button');
         let param = 'type=';
@@ -29,10 +31,6 @@
             throw new Error(err);
         });
     }
-
-    onMounted(() => {
-        console.log('mounted')
-    })
 </script>
 
 <template>
@@ -45,6 +43,7 @@
         </button>
     </div>
     <p class="error" v-if="players.length < 2">Add at least 2 players to get cards!</p>
+    <p class="info" v-if="playerActive !== ''" >Now playing {{ playerActive }}</p>
     <ul class="wrapper card-results">
         <li class="card-item" v-for="(card, index) of cards" :key="index">
             <Card v-bind:card=card />

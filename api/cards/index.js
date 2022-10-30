@@ -25,8 +25,9 @@ module.exports = async function(context) {
     } 
     let find = await cardModel.aggregate([
         { $match: { type: type } },
-        { $sample: { size: 50 } }
-    ]).limit(6).exec();   
+        { $sample: { size: 100 } }
+    // figure out how to sample 9 cards from the database
+    ]).limit(9).exec();   
     context.res = {
         status: 200,
         header: {

@@ -21,6 +21,13 @@ export const usePlayerStore = defineStore('PlayerStore', {
         },
         deactivatePlayer() {        
             this.playerActive = '';
+        },
+        getActivePlayer() {
+            this.players.map((player) => {
+                if (player.isActive) {
+                    this.playerActive = player.name;
+                }
+            })
         }
     }
 });
