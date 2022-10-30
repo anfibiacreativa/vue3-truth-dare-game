@@ -12,7 +12,8 @@
     "@fortawesome/vue-fontawesome": "^3.0.1",
     "axios": "^0.27.2",
     "pinia": "^2.0.14",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "@lerna-lite/cli": "^1.6.0",

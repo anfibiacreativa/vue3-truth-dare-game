@@ -23,7 +23,6 @@ module.exports = async function(context) {
         };
         process.exit(1);
     } 
-    // let find = await cardModel.find({ type: type }).limit(10).exec();
     let find = await cardModel.aggregate([
         { $match: { type: type } },
         { $sample: { size: 50 } }

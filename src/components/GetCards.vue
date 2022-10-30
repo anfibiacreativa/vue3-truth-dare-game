@@ -27,6 +27,7 @@
 import axios from 'axios';
 import { reactive } from 'vue';
 import Card from './Card.vue';
+import { useCardStore } from '../stores/CardStore';
 
 export default {
     name: 'GetCards',
@@ -39,14 +40,13 @@ export default {
             list: [],
             noCards: true
         });
+        const store = useCardStore();
 
-        //console.log(card, '#card list');
         const url = '/api/cards';
 
         function cards(e){
             let type = e.target.value;
             console.log(type, '#type from button');
-            // let type = e.target.value.trim();
             let param = 'type=';
             axios.post(url, 
                 `${param}${type}`

@@ -2,6 +2,7 @@
 import SearchBox from './components/SearchBox.vue';
 import GetCards from './components/GetCards.vue';
 import { useSearchStore } from '@/stores/SearchStore';
+import PlayerList from './components/PlayerList.vue';
 
 useSearchStore();
 </script>
@@ -14,7 +15,7 @@ useSearchStore();
       <GetCards />
     </section>
     <section class="section stats">
-      <h2>Players</h2>
+      <PlayerList />
     </section>
   </main>
 </template>

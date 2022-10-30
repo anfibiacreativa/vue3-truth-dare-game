@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import items from '@/data/items.json';
 
-export const useSearchStore = defineStore('SearchStore', {
+export const usePlayerStore = defineStore('PlayerStore', {
     state: () => {
         return {
             items,
