@@ -2,6 +2,7 @@
 import GetCards from './components/GetCards.vue';
 import { useCardStore } from '@/stores/CardStore';
 import PlayerList from './components/PlayerList.vue';
+import CardList from './components/CardList.vue';
 
 useCardStore();
 </script>
@@ -11,7 +12,7 @@ useCardStore();
   </header>
   <main class="main">
     <section class="section play">
-      <GetCards />
+      <CardList />
     </section>
     <section class="section stats">
       <PlayerList />

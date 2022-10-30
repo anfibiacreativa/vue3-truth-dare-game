@@ -1,14 +1,14 @@
 <template>
     <div class="card-wrapper">
-            <div class="card-flipper" v-bind:class="{ 'isFlipped': state.isFlipped }">
-                <div class="card card-front" @mousedown="flipCard">
-                    <span>{{card.title}}</span>
-                </div>
-                <div class="card card-back" @mousedown="flipCard">
-                    <span>{{card.text}}</span>  
-                </div>
+        <div class="card-flipper" v-bind:class="{ 'isFlipped': state.isFlipped }">
+            <div class="card card-front" @mousedown="flipCard">
+                <span>{{card.title}}</span>
+            </div>
+            <div class="card card-back" @mousedown="flipCard">
+                <span>{{card.text}}</span>  
             </div>
         </div>
+    </div>
 </template>
 
 <script>

@@ -27,7 +27,6 @@
 import axios from 'axios';
 import { reactive } from 'vue';
 import Card from './Card.vue';
-import { useCardStore } from '../stores/CardStore';
 
 export default {
     name: 'GetCards',
@@ -35,20 +34,19 @@ export default {
         Card
     },
     setup() {
-
         const state = reactive({
             list: [],
             noCards: true
         });
-        const store = useCardStore();
 
         const url = '/api/cards';
+        const { fetchCard } = useCardStore();
 
-        function cards(e){
+        async function cards(e){
             let type = e.target.value;
             console.log(type, '#type from button');
             let param = 'type=';
-            store.fetchCards(url, param, type);
+
             axios.post(url, 
                 `${param}${type}`
             ).then(res => {
@@ -61,7 +59,7 @@ export default {
                 state.list = res.data;
             }).catch(err => {
                 throw new Error(err);
-            });
+            }); 
         }
         return { cards, state }
     }

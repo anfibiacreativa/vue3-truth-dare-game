@@ -2,27 +2,32 @@ import { defineStore } from 'pinia';
 import axios from 'axios';
 
 export const useCardStore = defineStore('CardStore', {
-    state: () => {
-        cards: []
-    },
+    state: () => ({
+        cards: [],
+        loading: false,
+        error: null
+    }),
     getters: {
         getCards: (state) => {
             return state.cards;
         }
     },
     actions: {
-        async fetchCards(url, param, type) {
+        // get all the cards
+        async fetchCards(url, body) {
+            this.cards = [];
+            this.loading = true;
             try {
-                let body = `${param}${type}`;
-                const response = await axios.post(url, body)
-                .then((response) => {
-                    this.cards = response.data;
-                    console.log(this.cards);
-                })
-
+                this.cards = await axios.post(url, body)
+                    .then(response => {
+                        return response.data;
+                    })
             }
             catch (error) {
+                this.error = error;
                 console.log(error);
+            } finally {
+                this.loading = false;
             }
         }
     }
