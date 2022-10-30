@@ -2,17 +2,21 @@
     <div class="playerlist-wrapper">
        <h2 class="title">Players</h2>
        <form class="form" @submit.prevent="addPlayer">
-            <input type="text" v-model="playerName" placeholder="Enter player name" id="newPlayer" />
-            <button type="submit">
-                <font-awesome-icon icon="fa-solid fa-user-secret" />
+            <input class="newPlayer" type="text" v-model="playerName" placeholder="Enter player name" id="newPlayer" />
+            <button class="add" type="submit" title="Add Player">
+                <span>＋</span>
             </button>
+            <p v-if="state.isDuplicated" class="error">Please choose a different name.</p>
         </form>
        <ul class="playerlist">
-            <li v-for:="(player, index) in state.playerList" :key="index">
+            <li class="player-item" v-for:="(player, index) in state.playerList" :key="index">
                 {{ player }}
-                <button @click="removePlayer(index)">
-                    <font-awesome-icon icon="fa-solid fa-user-slash" />
+                <button class="remove" @click="removePlayer(index)">
+                    <span>⤬</span>
                 </button>
+                <div class="player-cards">
+
+                </div>
             </li>
        </ul>            
     </div>
@@ -33,14 +37,26 @@ export default {
         const state = reactive({
             index: 0,
             hasPlayers: false,
-            playerList: []
+            playerList: [],
+            isDuplicated: false,
+            isMaxPlayers: false
         });
-
+        
         function addPlayer(e) {
             let newPlayer = document.getElementById('newPlayer');
             console.log('#addPlayer', newPlayer.value);
+            if (newPlayer.value === '') {
+                state.isDuplicated = false;
+                return;
+            }
+            state.isMaxPlayers = state.playerList.length >= 4 ? true : false;
+            state.isDuplicated = state.playerList.includes(newPlayer.value) ? true : false;
+            if (state.isDuplicated || state.isMaxPlayers) {
+                return;
+            }
             state.playerList.push(props.playerName);
-            // must figure out how to reset this
+            state.hasPlayers = true;
+            // must figure out how to reset this since this is not working
             newPlayer.value = '';
         }
 

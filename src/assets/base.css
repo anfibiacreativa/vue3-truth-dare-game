@@ -9,6 +9,12 @@
   --vt-c-black-mute: #282828;
 
   --vt-c-indigo: #2c3e50;
+  --vt-c-indigo-soft: #98afc8;
+  --vt-c-indigo-highlights: #899aad;
+
+  --vt-c-background-list-soft: #f9fbff;
+
+  --vt-c-stress: #e97bb0;
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);

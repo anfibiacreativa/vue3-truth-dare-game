@@ -2,6 +2,7 @@
     import { storeToRefs } from 'pinia';
     import { useCardStore } from '@/stores/CardStore';
     import Card from './Card.vue';
+import { onMounted } from 'vue';
 
     defineProps({
         card: {
@@ -26,6 +27,10 @@
             throw new Error(err);
         });
     }
+
+    onMounted(() => {
+        console.log('mounted')
+    })
 </script>
 
 <template>

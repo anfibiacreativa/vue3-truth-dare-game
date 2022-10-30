@@ -115,11 +115,10 @@ input[name="search-box"]:focus-visible {
     width: 95%;
     font-weight: 600;
 }
-.search-message {
-    margin: 30px auto;
-    width: 95%;
-    font-size: 1.25rem;
-    color:rgb(255, 37, 142);
+.error {
+  font-size: 0.75em;
+  width: 95%;
+  color: var(--vt-c-stress);
 }
 
 .card-wrapper {
@@ -179,18 +178,77 @@ input[name="search-box"]:focus-visible {
 }
 
 .button {
+  transition: background-color 0.3s ease;
   border: 0;
   border-radius: 0.5rem;
-  color: var(--vt-c-black-mute);
-  background-color: var(--vt-c-text-dark-2);
-  height: 10vh;
+  color: var(--vt-c-text-dark-1);
+  background-color: var(--vt-c-indigo-soft);
+  height: 14vh;
   cursor: pointer;
   padding: 5px;
 }
 
+.add,
+.remove {
+  border: 0;
+  position: absolute;
+  right: 0;
+}
+
+.add {
+  transition: background-color 0.3s ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--vt-c-indigo-soft);
+  color: white;
+  font-weight: 800;
+}
+
+.add:hover {
+  background-color: var(--vt-c-indigo-highlights);
+}
+
+.remove {
+  border-radius: 20px;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  line-height: 1;
+  color: var(--vt-c-white);
+  background-color: var(--vt-c-stress);;
+  font-weight: 800;
+}
+
+.newPlayer {
+  width: calc(100% - 45px);
+  border: 1px solid var(--vt-c-indigo-soft);
+  padding: 5px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+}
+
+.player-cards {
+  border: 3px dashed var(--vt-c-indigo-soft);
+  border-radius: 10px;
+  height: 100px;
+}
+
+.player-item {
+  padding-bottom: 30px;
+}
+
+.player-item:nth-child(odd) {
+  background-color: var(--vt-c-background-list-soft);
+}
+
+.player-item:not(:first-child) {
+  padding-top: 20px;
+  border-top: 1px solid var(--vt-c-indigo-soft);
+}
+
 .button:hover {
-  background-color: var(--vt-c-white-soft);
-  color: var(--vt-c-black);
+  background-color: var(--vt-c-indigo-highlights);
 }
 
 .button:active {
