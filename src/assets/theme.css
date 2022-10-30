@@ -23,7 +23,6 @@ li {
 }
 
 #app {
-    max-width: 1024px;
     margin: 0 auto;
     padding: 2rem;
   
@@ -70,7 +69,6 @@ li {
   
   @media (min-width: 1024px) {
     body {
-      display: flex;
       place-items: center;
     }
   
@@ -84,14 +82,16 @@ li {
       place-items: flex-start;
       flex-wrap: wrap;
     }
-  
-    main {
-      min-width: 500px;
-    }
 
     .search-results {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .main {
+      max-width: 1024px;
+      margin: 0 auto;
+      grid-template-columns: 3fr 1fr;
     }
   }
 
@@ -195,4 +195,10 @@ input[name="search-box"]:focus-visible {
 
 .button:active {
   padding: 3px;
+}
+
+.main {
+  display: grid;
+  justify-items: stretch;
+  gap: 25px;
 }

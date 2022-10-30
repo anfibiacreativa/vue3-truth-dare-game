@@ -9,8 +9,13 @@ useSearchStore();
 <template>
   <header>
   </header>
-  <main>
-    <GetCards />
+  <main class="main">
+    <section class="section play">
+      <GetCards />
+    </section>
+    <section class="section stats">
+      <h2>Players</h2>
+    </section>
   </main>
 </template>
 
