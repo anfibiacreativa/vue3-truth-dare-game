@@ -4,7 +4,12 @@ export const usePlayerStore = defineStore('PlayerStore', {
     state: () => ({
         players: [],
         playerActive: '',
-        isEmpty: true
+        isEmpty: true,
+        challenge: {
+            playerActive: '',
+            text: '',
+            active: false,
+        },
     }),
     getters: {
         getPlayers: (state) => {
@@ -29,10 +34,18 @@ export const usePlayerStore = defineStore('PlayerStore', {
                 }
             })
         },
+        addCurrentChallenge(challenge) {
+           this.challenge.text = challenge.text;
+           this.challenge.active = true;
+        },
+        removeCurrentChallenge() {
+            this.challenge.text = '';
+            this.challenge.active = false;
+        },
         addCardToPlayer(card) {
             this.players.map((player) => {
-                if (player.isActive) {
-                    player.hand.push(card);
+                if (player.name === this.playerActive) {
+                    player.cards.push(card);
                 }
             })
         },
@@ -43,6 +56,10 @@ export const usePlayerStore = defineStore('PlayerStore', {
                 }
             })
         },
-        
+       increaseHand() {
+            this.players.map((player) => {
+                player.hand.push('🖐');
+            })
+        }
     }
 });

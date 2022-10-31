@@ -15,7 +15,6 @@
 <script>
 
 import { reactive } from 'vue';
-import { storeToRefs } from 'pinia';
 import { usePlayerStore } from '../stores/PlayerStore';
 
 export default {
@@ -27,7 +26,7 @@ export default {
         }
     },
     setup(props) {
-        const { addCardToPlayer } = usePlayerStore();
+        const { addCardToPlayer, addCurrentChallenge } = usePlayerStore();
         const state = reactive({
             index: 0,
             isFlipped: false
@@ -39,6 +38,7 @@ export default {
         function chooseCard(e) {
             console.log(props.card, '#props.card');
             addCardToPlayer(props.card);
+            addCurrentChallenge(props.card);
         }
         return { state, flipCard, chooseCard }
     }

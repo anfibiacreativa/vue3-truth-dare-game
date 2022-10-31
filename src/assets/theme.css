@@ -118,6 +118,10 @@ input[name="card-box"]{
   color: var(--vt-c-stress);
 }
 
+.error.info {
+  font-size: 1.25em;
+}
+
 .card-wrapper {
   perspective: 1000px;
   text-decoration: none;
@@ -140,7 +144,7 @@ input[name="card-box"]{
   background-color: var(--vt-c-white-soft)
 }
 
-.card-flipper.isFlipped .button .small {
+.card-flipper.isFlipped + .button.small {
   display: block;
   transition: display 0.5s ease-in-out;
 }
@@ -171,12 +175,13 @@ input[name="card-box"]{
   font-size: 2rem;
   padding-top: 1em;
   text-transform: uppercase;
+  color: var(--vt-c-indigo-highlights);
 }
 
 .card-back {
   transform:rotateY(180deg);
   font-size: 1rem;
-  padding: 30px 15px 0 15px;
+  padding: 15px;
 }
 
 .button {
@@ -191,7 +196,9 @@ input[name="card-box"]{
 }
 
 .button.small {
-  height: 5vh;
+  display: none;
+  height: 3vh;
+  padding: 0;
   width: 100%;
   position: absolute;
   left: 0;
@@ -207,8 +214,8 @@ input[name="card-box"]{
 
 .add {
   transition: background-color 0.3s ease;
-  width: 40px;
-  height: 40px;
+  width: 37px;
+  height: 37px;
   border-radius: 5px;
   background-color: var(--vt-c-indigo-soft);
   color: white;
@@ -273,4 +280,36 @@ input[name="card-box"]{
 
 .isBlock {
   display: block;
+}
+
+span.active {
+  font-size: 10px;
+  color: var(--vt-c-indigo-highlights);
+}
+
+.hand {
+  padding: 3px;
+  display: flex;
+}
+
+.thumb {
+  width: 18px;
+  height: 23px;
+  border-radius: 5px;
+  background-color: var(--vt-c-indigo-mute);
+  transition: color 1s ease-in-out;
+  box-shadow: -1px -1px 0px 0px var(--vt-c-divider-dark-2);
+  cursor: pointer;
+}
+
+.thumb:nth-child(1) {
+  transform: rotateY(0deg) rotate(-20deg); 
+}
+
+.thumb:not(:first-child) {
+  margin-left: -5px; 
+}
+
+.thumb:last-child {
+  transform: rotateY(0deg) rotate(20deg); 
 }

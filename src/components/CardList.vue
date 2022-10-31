@@ -42,8 +42,9 @@
             Dare to play! 😈
         </button>
     </div>
-    <p class="error" v-if="players.length < 2">Add at least 2 players to get cards!</p>
+    <p class="error.info" v-if="players.length < 2">Add at least 2 players to get cards!</p>
     <p class="info" v-if="playerActive !== ''" >Now playing {{ playerActive }}</p>
+    <p class="info" v-if="loading">Loading cards...Please wait.</p>
     <ul class="wrapper card-results">
         <li class="card-item" v-for="(card, index) of cards" :key="index">
             <Card v-bind:card=card />

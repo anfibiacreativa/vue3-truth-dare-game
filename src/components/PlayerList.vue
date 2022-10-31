@@ -17,7 +17,7 @@
                     <span>⤬</span>
                 </button>
                 <div class="player-cards">
-
+                    <Hand v-bind:player="player" />
                 </div>
             </li>
        </ul>            
@@ -29,17 +29,24 @@
 import { reactive } from 'vue';
 import { storeToRefs } from 'pinia';
 import { usePlayerStore } from '@/stores/PlayerStore';
+import Hand from '@/components/Hand.vue';
 
 export default {
     name: 'PlayerList',
     props: {
         'playerName': {
             type: String
+        },
+        'challenge': {
+            type: Object
         }
     },
+    components: {
+        Hand
+    },
     setup(props) {
-        const { players, isEmpty } = storeToRefs(usePlayerStore());
-        const { getPlayers, updatePlayers } = usePlayerStore();
+        const { players, challenge } = storeToRefs(usePlayerStore());
+        const {  updatePlayers } = usePlayerStore();
 
         const state = reactive({
             index: 0,
@@ -58,7 +65,8 @@ export default {
                 isActive: false,
                 hand: [],
                 score: 0,
-                isWinner: false
+                isWinner: false,
+                currentHand: ['🖐']
             }
             if (newPlayer.value === '') {
                 state.isDuplicated = false;
