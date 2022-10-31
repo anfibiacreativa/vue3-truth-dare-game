@@ -203,8 +203,7 @@ input[name="card-box"]{
 }
 
 .button:disabled {
-  background-color: var(--vt-c-indigo-mute);
-  color: var(--vt-c-indigo-soft);
+  opacity: 0.5;
 }
 
 .button:disabled:hover {

@@ -34,6 +34,10 @@ export const useCardStore = defineStore('CardStore', {
         setCardisChallenge() {
             console.log('setCardisChallenge before', this.isChallengeActive);
             this.isChallengeActive = true;
+        },
+        unsetCardisChallenge() {
+            console.log('unsetCardisChallenge before', this.isChallengeActive);
+            this.isChallengeActive = false;
         }
     }
 });

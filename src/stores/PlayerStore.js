@@ -24,8 +24,9 @@ export const usePlayerStore = defineStore('PlayerStore', {
         activatePlayer(player) {
             this.playerActive = player;
         },
-        deactivatePlayer() {        
+        deactivatePlayer(player) {        
             this.playerActive = '';
+            player.isActive = false;
         },
         getActivePlayer() {
             this.players.map((player) => {
@@ -54,7 +55,8 @@ export const usePlayerStore = defineStore('PlayerStore', {
         addScoreToPlayer(score) {
             this.players.map((player) => {
                 if (player.isActive) {
-                    player.score += score;
+                    player.score += 1;
+                    console.log('addScoreToPlayer', player.score);
                 }
             })
         }
