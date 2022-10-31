@@ -43,11 +43,13 @@
         </button>
     </div>
     {{ isGameOver }}
-    <p class="error.info" v-if="players.length < 2">Add at least 2 players to get cards!</p>
-    <p class="info" v-if="playerActive !== ''" >Now playing {{ playerActive }}</p>
-    <p class="error" v-if="playerActive && !challenge.active">Choose wisely, {{ playerActive }}! You only have one chance per hand.</p>
-    <p class="info" v-if="isLoading">Loading cards...Please wait.</p>
-    <p class="over" v-if="isGameOver">Game Over!</p>
+    <div v-if="!this.isGameOver">
+        <p class="error.info" v-if="players.length < 2">Add at least 2 players to get cards!</p>
+        <p class="info" v-if="playerActive !== ''" >Now playing {{ playerActive }}</p>
+        <p class="error" v-if="playerActive && !challenge.active">Choose wisely, {{ playerActive }}! You only have one chance per hand.</p>
+        <p class="info" v-if="isLoading">Loading cards...Please wait.</p>
+    </div>
+    <p class="over" v-if="isGameOver">✨Game Over!✨</p>
     <ul class="wrapper card-results">
         <li class="card-item" v-for="(card, index) of cards" :key="index">
             <Card v-bind:card=card />

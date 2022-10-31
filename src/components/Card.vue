@@ -12,7 +12,8 @@
     });
 
     const { addCardToPlayer, addCurrentChallenge } = usePlayerStore();
-    const { setCardisChallenge } = useCardStore();
+    const { setCardisChallenge, updateAllCardsPlayed } = useCardStore();
+    const { players } = storeToRefs(usePlayerStore());
     const { isChallengeActive } = storeToRefs(useCardStore());
     const state = reactive({
         index: 0,
@@ -28,6 +29,8 @@
         addCurrentChallenge(props.card);
         state.isFlipped = false;
         setCardisChallenge();
+        console.log(players.value.length, 'playersLength');
+        updateAllCardsPlayed(props.card);
     }
 </script>
 

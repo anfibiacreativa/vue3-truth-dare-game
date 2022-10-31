@@ -32,15 +32,18 @@ export const useCardStore = defineStore('CardStore', {
                 this.loading = false;
             }
         },
-        endGame(cards, playersNumber) {
-            this.totalCardsPlayed = new Set([...this.totalCardsPlayed, ...cards]);
-            const allCardsPlayed = Array.of(this.totalCardsPlayed).length === Array.of(playersNumber).length * 3;
-            if (allCardsPlayed && !this.isChallengeActive) {
+        endGame(players) {
+            if ((this.totalCardsPlayed.length / players) === 3 && !this.isChallengeActive) {
+                console.log('####endGame');
                 this.isGameOver = true;
             }
         },
         resetCards() {
             this.cards = [];
+        },
+        updateAllCardsPlayed(card) {
+            this.totalCardsPlayed.push(card);
+            console.log('####totalCardsPlayed', this.totalCardsPlayed.length);
         },
         setCardisChallenge() {
             console.log('setCardisChallenge before', this.isChallengeActive);

@@ -25,24 +25,25 @@ const {
 } = usePlayerStore();
 
 function resetGame(player) {
+    const totalPlayers = players.value.length;
+    console.log(totalPlayers, '#totalPlayers');
     deactivatePlayer(player);
     removeCurrentChallenge();
     unsetCardisChallenge();
     resetCards();
+    endGame(totalPlayers);
 }
 
 function succeed(e) {
     console.log('succeed');
     addScoreToPlayer(1);
     resetGame(props.player);
-    endGame(props.player.cards, players);
 }
 
 function fail(e) {
     console.log('fail');
     addScoreToPlayer(0);
     resetGame(props.player);
-    endGame(props.player.cards, players);
 }
 
 </script>
