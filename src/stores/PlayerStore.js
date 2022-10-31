@@ -24,14 +24,14 @@ export const usePlayerStore = defineStore('PlayerStore', {
         activatePlayer(oldPlayer) {
             const oldIndex = this.players.indexOf(oldPlayer);
             console.log('#####oldIndex', oldIndex);
-            if (oldIndex <= this.players.length - 1 && oldIndex != -1) {
+            if (oldIndex < this.players.length - 1 && oldIndex != -1) {
                 const newIndex = oldIndex + 1;
                 this.playerActive = this.players[newIndex].name;
                 this.players[newIndex].isActive = true;
                 this.challenge.playerActive = this.players[newIndex].name;
             } else {
                 this.playerActive = this.players[0].name;
-                this.players[0].active = true;
+                this.players[0].isActive = true;
             }
         },
         deactivatePlayer(currentActivePlayer) {
