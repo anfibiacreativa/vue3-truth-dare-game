@@ -55,11 +55,6 @@ export const usePlayerStore = defineStore('PlayerStore', {
                     player.score += score;
                 }
             })
-        },
-       increaseHand() {
-            this.players.map((player) => {
-                player.hand.push('🖐');
-            })
         }
     }
 });

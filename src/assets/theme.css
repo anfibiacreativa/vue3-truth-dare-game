@@ -122,6 +122,12 @@ input[name="card-box"]{
   font-size: 1.25em;
 }
 
+.challenge.info {
+  font-size: 0.9em;
+  padding: 0 10px;
+  color: var(--vt-c-indigo-highlights)
+}
+
 .card-wrapper {
   perspective: 1000px;
   text-decoration: none;

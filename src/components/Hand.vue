@@ -6,9 +6,6 @@
     card: {
         type: Object
     },
-    hands: {
-        type: Array
-    },
     player: {
         type: Object
     },
@@ -24,7 +21,7 @@ const { players, playerActive, challenge } = storeToRefs(usePlayerStore());
 
 <template>
     <div class="hand">
-        <div v-for="hand in player.currentHand" class="thumb"></div>
+        <div v-for="card in player.cards" class="thumb"></div>
     </div>
     <div v-if="playerActive === player.name" class="info challenge">{{ challenge.text }}</div>
 </template>

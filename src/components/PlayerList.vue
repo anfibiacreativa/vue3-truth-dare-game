@@ -63,10 +63,8 @@ export default {
                 name: newPlayer.value,
                 cards: [],
                 isActive: false,
-                hand: [],
                 score: 0,
-                isWinner: false,
-                currentHand: ['🖐']
+                isWinner: false
             }
             if (newPlayer.value === '') {
                 state.isDuplicated = false;
