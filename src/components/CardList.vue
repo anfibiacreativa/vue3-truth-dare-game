@@ -14,7 +14,7 @@
         isPlaying: false
     });
 
-    const { cards, isLoading, error } = storeToRefs(useCardStore());
+    const { cards, isLoading, error, isGameOver } = storeToRefs(useCardStore());
     const { fetchCards } = useCardStore();
     const { getActivePlayer } = usePlayerStore(); 
     const { players, playerActive, challenge } = storeToRefs(usePlayerStore());
@@ -35,17 +35,19 @@
 
 <template>
     <div class="panel">
-        <button :disabled="players.length < 2 || challenge.active" class="button" value="1" @click="getCardList">
+        <button :disabled="players.length < 2 || challenge.active || isGameOver" class="button" value="1" @click="getCardList">
             Say the truth, ok? 🥹
         </button>
-        <button :disabled="players.length < 2 || challenge.active" class="button" value="2" @click="getCardList">
+        <button :disabled="players.length < 2 || challenge.active || isGameOver" class="button" value="2" @click="getCardList">
             Dare to play! 😈
         </button>
     </div>
+    {{ isGameOver }}
     <p class="error.info" v-if="players.length < 2">Add at least 2 players to get cards!</p>
     <p class="info" v-if="playerActive !== ''" >Now playing {{ playerActive }}</p>
     <p class="error" v-if="playerActive && !challenge.active">Choose wisely, {{ playerActive }}! You only have one chance per hand.</p>
     <p class="info" v-if="isLoading">Loading cards...Please wait.</p>
+    <p class="over" v-if="isGameOver">Game Over!</p>
     <ul class="wrapper card-results">
         <li class="card-item" v-for="(card, index) of cards" :key="index">
             <Card v-bind:card=card />

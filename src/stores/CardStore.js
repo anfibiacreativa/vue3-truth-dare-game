@@ -4,9 +4,11 @@ import axios from 'axios';
 export const useCardStore = defineStore('CardStore', {
     state: () => ({
         cards: [],
+        totalCardsPlayed: [],
         isLoading: false,
         error: null,
-        isChallengeActive: false
+        isChallengeActive: false,
+        isGameOver: false
     }),
     getters: {
         getCards: (state) => {
@@ -16,8 +18,7 @@ export const useCardStore = defineStore('CardStore', {
     actions: {
         // get all the cards
         async fetchCards(url, body) {
-            this.cards = [];
-            this.loading = true
+            this.loading = true;
             try {
                 this.cards = await axios.post(url, body)
                     .then(response => {
@@ -29,6 +30,13 @@ export const useCardStore = defineStore('CardStore', {
                 console.log(error);
             } finally {
                 this.loading = false;
+            }
+        },
+        endGame(cards, playersNumber) {
+            this.totalCardsPlayed = new Set([...this.totalCardsPlayed, ...cards]);
+            const allCardsPlayed = Array.of(this.totalCardsPlayed).length === Array.of(playersNumber).length * 3;
+            if (allCardsPlayed && !this.isChallengeActive) {
+                this.isGameOver = true;
             }
         },
         resetCards() {

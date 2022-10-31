@@ -9,7 +9,7 @@ export const usePlayerStore = defineStore('PlayerStore', {
             playerActive: '',
             text: '',
             active: false,
-        },
+        }
     }),
     getters: {
         getPlayers: (state) => {
@@ -71,11 +71,10 @@ export const usePlayerStore = defineStore('PlayerStore', {
         },
         addScoreToPlayer(score) {
             this.players.map((player) => {
-                if (player.isActive) {
-                    player.score += 1;
-                    console.log('addScoreToPlayer', player.score);
+                if (player.name === this.playerActive) {
+                    player.score.push(score);
                 }
-            })
+            });
         }
     }
 });

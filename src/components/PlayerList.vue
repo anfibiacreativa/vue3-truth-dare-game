@@ -45,7 +45,7 @@ export default {
         Hand
     },
     setup(props) {
-        const { players, challenge } = storeToRefs(usePlayerStore());
+        const { players } = storeToRefs(usePlayerStore());
         const {  updatePlayers } = usePlayerStore();
 
         const state = reactive({
@@ -63,7 +63,7 @@ export default {
                 name: newPlayer.value,
                 cards: [],
                 isActive: false,
-                score: 0,
+                score: [],
                 isWinner: false
             }
             if (newPlayer.value === '') {
