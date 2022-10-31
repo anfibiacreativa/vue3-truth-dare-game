@@ -16,7 +16,7 @@
 });
 
 const { players, playerActive, challenge } = storeToRefs(usePlayerStore());
-const { unsetCardisChallenge } = useCardStore();
+const { unsetCardisChallenge, resetCards } = useCardStore();
 
 const { 
     activatePlayer,
@@ -25,19 +25,22 @@ const {
     removeCurrentChallenge
 } = usePlayerStore();
 
+function resetGame(player) {
+    deactivatePlayer(player);
+    removeCurrentChallenge();
+    unsetCardisChallenge();
+    resetCards();
+}
+
 function succeed(e) {
     console.log('succeed', props.player.score);
     addScoreToPlayer(props.player.score);
-    deactivatePlayer(props.player);
-    removeCurrentChallenge();
-    unsetCardisChallenge();
+    resetGame(props.player);
 }
 
 function fail(e) {
     console.log('fail');
-    deactivatePlayer(props.player);
-    removeCurrentChallenge();
-    unsetCardisChallenge();
+    resetGame(props.player);
 }
 
 </script>

@@ -31,6 +31,9 @@ export const useCardStore = defineStore('CardStore', {
                 this.loading = false;
             }
         },
+        resetCards() {
+            this.cards = [];
+        },
         setCardisChallenge() {
             console.log('setCardisChallenge before', this.isChallengeActive);
             this.isChallengeActive = true;

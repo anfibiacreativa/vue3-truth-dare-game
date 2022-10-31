@@ -21,12 +21,27 @@ export const usePlayerStore = defineStore('PlayerStore', {
             this.players = players;
             this.isEmpty = false;
         },
-        activatePlayer(player) {
-            this.playerActive = player;
+        activatePlayer(oldPlayer) {
+            const oldIndex = this.players.indexOf(oldPlayer);
+            console.log('#####oldIndex', oldIndex);
+            if (oldIndex <= this.players.length - 1 && oldIndex != -1) {
+                const newIndex = oldIndex + 1;
+                this.playerActive = this.players[newIndex].name;
+                this.players[newIndex].isActive = true;
+                this.challenge.playerActive = this.players[newIndex].name;
+            } else {
+                this.playerActive = this.players[0].name;
+                this.players[0].active = true;
+            }
         },
-        deactivatePlayer(player) {        
-            this.playerActive = '';
-            player.isActive = false;
+        deactivatePlayer(currentActivePlayer) {
+            this.players.map((player) => {
+                if (player.name === currentActivePlayer.name) {
+                    this.playerActive = '';
+                    player.isActive = false;
+                    this.activatePlayer(currentActivePlayer);
+                }
+            });  
         },
         getActivePlayer() {
             this.players.map((player) => {
@@ -38,10 +53,12 @@ export const usePlayerStore = defineStore('PlayerStore', {
         addCurrentChallenge(challenge) {
            this.challenge.text = challenge.text;
            this.challenge.active = true;
+           this.challenge.playerActive = this.playerActive;
         },
         removeCurrentChallenge() {
             this.challenge.text = '';
             this.challenge.active = false;
+            this.challenge.playerActive = '';
         },
         addCardToPlayer(card) {
             this.players.map((player) => {

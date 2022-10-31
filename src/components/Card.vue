@@ -26,6 +26,7 @@
         console.log(props.card, '#card');
         addCardToPlayer(props.card);
         addCurrentChallenge(props.card);
+        state.isFlipped = false;
         setCardisChallenge();
     }
 </script>

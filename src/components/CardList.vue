@@ -52,4 +52,5 @@
         </li> 
     </ul>
     {{ challenge }}
+    {{ players }}
 </template>
