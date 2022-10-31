@@ -45,9 +45,11 @@ export const usePlayerStore = defineStore('PlayerStore', {
         addCardToPlayer(card) {
             this.players.map((player) => {
                 if (player.name === this.playerActive) {
-                    player.cards.push(card);
+                    if (player.cards.length < 3) {
+                        player.cards.push(card);
+                    }
                 }
-            })
+            });
         },
         addScoreToPlayer(score) {
             this.players.map((player) => {

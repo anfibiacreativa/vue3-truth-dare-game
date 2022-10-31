@@ -4,8 +4,9 @@ import axios from 'axios';
 export const useCardStore = defineStore('CardStore', {
     state: () => ({
         cards: [],
-        loading: false,
-        error: null
+        isLoading: false,
+        error: null,
+        isChallengeActive: false
     }),
     getters: {
         getCards: (state) => {
@@ -29,6 +30,10 @@ export const useCardStore = defineStore('CardStore', {
             } finally {
                 this.loading = false;
             }
+        },
+        setCardisChallenge() {
+            console.log('setCardisChallenge before', this.isChallengeActive);
+            this.isChallengeActive = true;
         }
     }
 });

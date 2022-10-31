@@ -24,5 +24,9 @@ const { players, playerActive, challenge } = storeToRefs(usePlayerStore());
         <div v-for="card in player.cards" class="thumb"></div>
     </div>
     <div v-if="playerActive === player.name" class="info challenge">{{ challenge.text }}</div>
+    <div v-if="playerActive === player.name" class="action-panel">
+        <a href="#" role="button" class="action"  @click="acceptCard">Accept</a>
+        <a href="#" role="button" class="action" @click="declineCard">Decline</a>
+    </div>
 </template>
 
