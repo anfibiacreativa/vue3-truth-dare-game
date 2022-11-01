@@ -3,6 +3,7 @@
     import { useCardStore } from '@/stores/CardStore';
     import { usePlayerStore } from '@/stores/PlayerStore';
     import Card from './Card.vue';
+    import Results from './Results.vue';
 
     defineProps({
         card: {
@@ -50,6 +51,7 @@
         <p class="info" v-if="isLoading">Loading cards...Please wait.</p>
     </div>
     <p class="over" v-if="isGameOver">✨Game Over!✨</p>
+    <Results />
     <ul class="wrapper card-results">
         <li class="card-item" v-for="(card, index) of cards" :key="index">
             <Card v-bind:card=card />

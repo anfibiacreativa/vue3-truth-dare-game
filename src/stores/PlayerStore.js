@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { shouldTransformRef } from 'vue/compiler-sfc';
 
 export const usePlayerStore = defineStore('PlayerStore', {
     state: () => ({
@@ -9,7 +10,8 @@ export const usePlayerStore = defineStore('PlayerStore', {
             playerActive: '',
             text: '',
             active: false,
-        }
+        },
+        totalScores: [],
     }),
     getters: {
         getPlayers: (state) => {
@@ -74,6 +76,7 @@ export const usePlayerStore = defineStore('PlayerStore', {
                 if (player.name === this.playerActive) {
                     player.round.score.push(score);
                 }
+                this.addTotalScores(score);
             });
         },
         addHandPlayedToPlayer() {
@@ -82,6 +85,31 @@ export const usePlayerStore = defineStore('PlayerStore', {
                     player.round.hand.push('🖐');
                 }
             });
+        },
+        addTotalScores(score) {
+            this.players.map((player) => {
+                if (player.name === this.playerActive) {
+                    let index = this.players.indexOf(player);
+                    console.log(this.players.length, 'this.players.length|||||||####');
+                    console.log(this.totalScores.length, 'scores.length|||||||####');
+                    if (this.totalScores.length < this.players.length) {
+                        if (typeof this.totalScores[index] === 'undefined') {
+                            this.totalScores.splice(
+                                index,
+                                0,
+                                {   
+                                    name: player.name,
+                                    score: Number(score)
+                                }
+                            );
+                        }
+                        
+                    } else {
+                        this.totalScores[index].score += Number(score);
+                    }
+                } 
+            });
+            console.log('#####totalScore', [this.totalScores]);
         }
     }
 });

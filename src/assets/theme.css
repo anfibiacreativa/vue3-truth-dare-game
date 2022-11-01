@@ -315,7 +315,7 @@ span.active {
   display: flex;
 }
 
-.hand.result {
+.hand.results {
   position: absolute;
   top: 0;
   left: 3px;
@@ -330,6 +330,13 @@ span.active {
   transition: color 1s ease-in-out;
   box-shadow: -1px -1px 0px 0px var(--vt-c-divider-dark-2);
   cursor: pointer;
+}
+
+.over {
+  font-size: 50px;
+  color: var(--vt-c-indigo-highlights);
+  width: 100%;
+  text-align: center;
 }
 
 .result.green {
