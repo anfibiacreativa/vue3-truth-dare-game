@@ -76,8 +76,8 @@ export const usePlayerStore = defineStore('PlayerStore', {
                 if (player.name === this.playerActive) {
                     player.round.score.push(score);
                 }
-                this.addTotalScores(score);
             });
+            this.addTotalScores(score);
         },
         addHandPlayedToPlayer() {
             this.players.map((player) => {
@@ -87,6 +87,7 @@ export const usePlayerStore = defineStore('PlayerStore', {
             });
         },
         addTotalScores(score) {
+            console.log('newScore', score);
             this.players.map((player) => {
                 if (player.name === this.playerActive) {
                     let index = this.players.indexOf(player);
