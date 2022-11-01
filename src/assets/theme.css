@@ -233,6 +233,7 @@ input[name="card-box"]{
   border: 0;
   position: absolute;
   right: 0;
+  cursor: pointer;
 }
 
 .add {

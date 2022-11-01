@@ -49,12 +49,8 @@ function addPlayer(e) {
         return;
     }
     state.isMaxPlayers = state.playerList.length >= 4 ? true : false;
-    state.playerList.map((player) => { 
-        if (newPlayer.value === player.name) {
-            state.isDuplicated = true;
-        } else {
-            state.isDuplicated = false;
-        };
+    state.playerList.map((player) => {
+        (player.name === newPlayer.value) ? state.isDuplicated = true : state.isDuplicated = false;
     });
     if (state.isDuplicated || state.isMaxPlayers) {
         return;
@@ -83,14 +79,16 @@ function removePlayer(index) {
         state.isMaxPlayers = false;
     }
 }
+
 </script>
 
 <template>
+    {{players}}
     <div class="playerlist-wrapper">
        <h2 class="title"> Players List</h2>
        <form class="form" @submit.prevent="addPlayer">
             <input class="newPlayer" type="text" v-model="playerName" placeholder="Enter player name" id="newPlayer" />
-            <button class="add" type="submit" title="Add Player">
+            <button :disabled="false" class="add" type="submit" title="Add Player">
                 <span>＋</span>
             </button>
             <p v-if="state.isDuplicated" class="error">Please choose a different name.</p>
@@ -99,12 +97,12 @@ function removePlayer(index) {
        <ul class="playerlist">
             <li class="player-item" v-for:="(player, index) in state.playerList" :key="index" v-bind:class="{ 'isActive': player.isActive }">
                 {{ player.name }}
-                <span v-if="player.isActive" class="active">👉 NOW PLAYING</span>
-                <button class="remove" @click="removePlayer(index)">
+                <span v-if="player.isActive && !isGameOver" class="active">👉 NOW PLAYING</span>
+                <button :disabled="false" class="remove" @click="removePlayer(index)">
                     <span>⤬</span>
                 </button>
                 <div class="player-cards">
-                    <Hand v-bind:player="player" />
+                    <Hand v-bind:player="player" v-if="!isGameOver" />
                 </div>
             </li>
        </ul>            
