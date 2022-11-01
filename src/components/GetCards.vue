@@ -44,7 +44,6 @@ export default {
 
         async function cards(e){
             let type = e.target.value;
-            console.log(type, '#type from button');
             let param = 'type=';
 
             axios.post(url, 

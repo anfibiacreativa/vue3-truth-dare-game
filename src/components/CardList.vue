@@ -24,7 +24,6 @@
     function getCardList(e) {
         setActivePlayer();
         let type = e.target.value;
-        console.log(type, '#type from button');
         let param = 'type=';
         fetchCards(url, `${param}${type}`).then(() => {
             console.log({ cards, isLoading, error }, '#cards, loading, error');
@@ -43,7 +42,6 @@
             Dare to play! 😈
         </button>
     </div>
-    {{ isGameOver }}
     <div v-if="!this.isGameOver">
         <p class="error.info" v-if="players.length < 2">Add at least 2 players to get cards!</p>
         <p class="info" v-if="playerActive !== ''" >Now playing {{ playerActive }}</p>
@@ -56,6 +54,4 @@
             <Card v-bind:card=card />
         </li> 
     </ul>
-    {{ challenge }}
-    {{ players }}
 </template>

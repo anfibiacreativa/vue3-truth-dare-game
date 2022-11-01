@@ -26,7 +26,6 @@ const {
 
 function resetGame(player) {
     const totalPlayers = players.value.length;
-    console.log(totalPlayers, '#totalPlayers');
     if (player) {
         deactivatePlayer(player);
     }
@@ -37,13 +36,11 @@ function resetGame(player) {
 }
 
 function succeed(e) {
-    console.log('succeed');
     addScoreToPlayer(1);
     resetGame(props.player);
 }
 
 function fail(e) {
-    console.log('fail');
     addScoreToPlayer(0);
     resetGame(props.player);
 }

@@ -36,7 +36,6 @@ const state = reactive({
 
 function addPlayer(e) {
     let newPlayer = document.getElementById('newPlayer');
-    console.log('#addPlayer', newPlayer.value);
     let newPlayerObj = {
         name: newPlayer.value,
         cards: [],
@@ -65,7 +64,6 @@ function addPlayer(e) {
 
     if (players ==! state.playerList) {
         let update = new Set([ ...players, ...state.playerList]);
-        console.log(update, '#update');
         updatePlayers(update);
     } else {
         updatePlayers(state.playerList);
@@ -76,7 +74,6 @@ function addPlayer(e) {
 }
 
 function removePlayer(index) {
-    console.log('removePlayer');
     state.playerList.splice(index, 1);
     if (state.playerList.length <= 3) {
         state.isMaxPlayers = false;

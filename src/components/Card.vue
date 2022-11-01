@@ -13,7 +13,6 @@
 
     const { addCardToPlayer, addCurrentChallenge, addHandPlayedToPlayer } = usePlayerStore();
     const { setCardisChallenge, updateAllCardsPlayed } = useCardStore();
-    const { players } = storeToRefs(usePlayerStore());
     const { isChallengeActive } = storeToRefs(useCardStore());
     const state = reactive({
         index: 0,
@@ -24,12 +23,10 @@
         state.isFlipped = !state.isFlipped;
     }
     function chooseCard(e) {
-        console.log(props.card, '#card');
         addCardToPlayer(props.card);
         addCurrentChallenge(props.card);
         state.isFlipped = false;
         setCardisChallenge();
-        console.log(players.value.length, 'playersLength');
         updateAllCardsPlayed(props.card);
         addHandPlayedToPlayer()
     }
@@ -37,7 +34,6 @@
 
 <template>
     <div class="card-wrapper">
-        {{ isChallengeActive }}
         <div class="card-flipper" v-bind:class="{ 'isFlipped': state.isFlipped }">
             <div class="card card-front" @mousedown="flipCard">
                 <span>{{card.title}}</span>
