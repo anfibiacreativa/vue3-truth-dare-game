@@ -23,7 +23,7 @@ const props = defineProps({
 });
 
 const { players } = storeToRefs(usePlayerStore());
-const { isGameOver } = storeToRefs(useCardStore());
+const { isGameOver, isGameOn } = storeToRefs(useCardStore());
 const { updatePlayers } = usePlayerStore();
 
 const state = reactive({
@@ -83,12 +83,11 @@ function removePlayer(index) {
 </script>
 
 <template>
-    {{players}}
     <div class="playerlist-wrapper">
-       <h2 class="title"> Players List</h2>
+       <h2 class="title">Players</h2>
        <form class="form" @submit.prevent="addPlayer">
             <input class="newPlayer" type="text" v-model="playerName" placeholder="Enter player name" id="newPlayer" />
-            <button :disabled="false" class="add" type="submit" title="Add Player">
+            <button :disabled="isGameOn" class="add" type="submit" title="Add Player">
                 <span>＋</span>
             </button>
             <p v-if="state.isDuplicated" class="error">Please choose a different name.</p>
@@ -98,7 +97,7 @@ function removePlayer(index) {
             <li class="player-item" v-for:="(player, index) in state.playerList" :key="index" v-bind:class="{ 'isActive': player.isActive }">
                 {{ player.name }}
                 <span v-if="player.isActive && !isGameOver" class="active">👉 NOW PLAYING</span>
-                <button :disabled="false" class="remove" @click="removePlayer(index)">
+                <button :disabled="isGameOn" class="remove" @click="removePlayer(index)">
                     <span>⤬</span>
                 </button>
                 <div class="player-cards">

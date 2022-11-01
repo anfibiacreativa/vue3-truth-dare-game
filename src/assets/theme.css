@@ -236,6 +236,12 @@ input[name="card-box"]{
   cursor: pointer;
 }
 
+.add:disabled,
+.remove:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .add {
   transition: background-color 0.3s ease;
   width: 37px;

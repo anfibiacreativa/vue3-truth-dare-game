@@ -8,7 +8,8 @@ export const useCardStore = defineStore('CardStore', {
         isLoading: false,
         error: null,
         isChallengeActive: false,
-        isGameOver: false
+        isGameOver: false,
+        isGameOn: false
     }),
     getters: {
         getCards: (state) => {
@@ -42,6 +43,9 @@ export const useCardStore = defineStore('CardStore', {
             this.cards = [];
         },
         updateAllCardsPlayed(card) {
+            if (this.totalCardsPlayed.length === 0) {
+                this.isGameOn = true;
+            }
             this.totalCardsPlayed.push(card);
             console.log('####totalCardsPlayed', this.totalCardsPlayed.length);
         },
