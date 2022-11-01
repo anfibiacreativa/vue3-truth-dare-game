@@ -18,7 +18,7 @@ function startOver() {
 <template>
     {{ players }}
     <section class="halloffame">
-        <p class="over" v-if="isGameOver">✨Game Over!✨</p>
+        <p class="over">✨Game Over!✨</p>
         <h2>Final Scores</h2>
         <ul>
             <li v-for="score in totalScores" :key="score.name">

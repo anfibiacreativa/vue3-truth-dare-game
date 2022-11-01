@@ -83,7 +83,6 @@ function removePlayer(index) {
 </script>
 
 <template>
-    {{ players }}
     <div class="playerlist-wrapper">
        <h2 class="title">Players</h2>
        <form class="form" @submit.prevent="addPlayer">
