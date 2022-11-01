@@ -16,7 +16,7 @@ export const usePlayerStore = defineStore('PlayerStore', {
     getters: {
         getPlayers: (state) => {
             return state.players;
-        }
+        },
     },
     actions: {
         updatePlayers(players) {
@@ -45,7 +45,7 @@ export const usePlayerStore = defineStore('PlayerStore', {
                 }
             });  
         },
-        getActivePlayer() {
+        setActivePlayer() {
             this.players.map((player) => {
                 if (player.isActive) {
                     this.playerActive = player.name;
@@ -111,6 +111,21 @@ export const usePlayerStore = defineStore('PlayerStore', {
                 } 
             });
             console.log('#####totalScore', [this.totalScores]);
+        },
+        setWinner() {
+            console.log('set winner was called');
+            const highestScore = Math.max(...this.totalScores.map((score) => score.score));
+            const winner = this.totalScores.find((score) => {
+                if (score.score === highestScore) {
+                    return score.name;
+                }
+            });
+            console.log('#####winner', winner);
+            this.players.map((player) => {
+                if (player.name === winner) {
+                    player.isWinner = true;
+                }
+            });
         }
     }
 });
