@@ -41,7 +41,10 @@ function addPlayer(e) {
         name: newPlayer.value,
         cards: [],
         isActive: false,
-        score: [],
+        round: {
+            hand: [],
+            score: []
+        },
         isWinner: false
     }
     if (newPlayer.value === '') {
@@ -83,6 +86,7 @@ function removePlayer(index) {
 </script>
 
 <template>
+    {{ players }}
     <div class="playerlist-wrapper">
        <h2 class="title">Players</h2>
        <form class="form" @submit.prevent="addPlayer">

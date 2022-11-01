@@ -72,7 +72,14 @@ export const usePlayerStore = defineStore('PlayerStore', {
         addScoreToPlayer(score) {
             this.players.map((player) => {
                 if (player.name === this.playerActive) {
-                    player.score.push(score);
+                    player.round.score.push(score);
+                }
+            });
+        },
+        addHandPlayedToPlayer() {
+            this.players.map((player) => {
+                if (player.name === this.playerActive) {
+                    player.round.hand.push('🖐');
                 }
             });
         }

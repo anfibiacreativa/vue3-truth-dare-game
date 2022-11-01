@@ -8,10 +8,10 @@
         card: {
             type: Object,
             required: true
-        }
+        },
     });
 
-    const { addCardToPlayer, addCurrentChallenge } = usePlayerStore();
+    const { addCardToPlayer, addCurrentChallenge, addHandPlayedToPlayer } = usePlayerStore();
     const { setCardisChallenge, updateAllCardsPlayed } = useCardStore();
     const { players } = storeToRefs(usePlayerStore());
     const { isChallengeActive } = storeToRefs(useCardStore());
@@ -31,6 +31,7 @@
         setCardisChallenge();
         console.log(players.value.length, 'playersLength');
         updateAllCardsPlayed(props.card);
+        addHandPlayedToPlayer()
     }
 </script>
 
