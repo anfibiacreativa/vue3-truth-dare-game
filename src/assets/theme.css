@@ -315,7 +315,14 @@ span.active {
   display: flex;
 }
 
-.thumb {
+.hand.result {
+  position: absolute;
+  top: 0;
+  left: 3px;
+}
+
+.thumb,
+.result {
   width: 18px;
   height: 23px;
   border-radius: 5px;
@@ -325,15 +332,26 @@ span.active {
   cursor: pointer;
 }
 
-.thumb:nth-child(1) {
+.result.green {
+  background-color: var(--vt-c-success);
+}
+
+.result.red {
+  background-color: var(--vt-c-fail);
+}
+
+.thumb:nth-child(1),
+.result:nth-child(1) {
   transform: rotateY(0deg) rotate(-20deg); 
 }
 
-.thumb:not(:first-child) {
+.thumb:not(:first-child),
+.result:nth-child(1) {
   margin-left: -5px; 
 }
 
-.thumb:last-child {
+.thumb:last-child,
+.result:last-child {
   transform: rotateY(0deg) rotate(20deg); 
 }
 

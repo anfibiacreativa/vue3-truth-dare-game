@@ -50,7 +50,10 @@ function fail(e) {
 
 <template>
     <div class="hand">
-        <div v-for="card in player.cards" class="thumb"></div>
+        <div v-for="card in player.round.hand" class="thumb"></div>
+    </div>
+    <div class="hand results">
+        <div v-for="score in player.round.score" class="result" v-bind:class="score === 1 ? 'green': 'red'"></div>
     </div>
     <div v-if="playerActive === player.name" class="info challenge">{{ challenge.text }}</div>
     <div v-if="playerActive === player.name" class="action-panel">
