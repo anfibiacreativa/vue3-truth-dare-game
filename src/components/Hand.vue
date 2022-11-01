@@ -26,9 +26,7 @@ const {
 
 function resetGame(player) {
     const totalPlayers = players.value.length;
-    if (player) {
-        deactivatePlayer(player);
-    }
+    deactivatePlayer(player);
     removeCurrentChallenge();
     unsetCardisChallenge();
     resetCards();
