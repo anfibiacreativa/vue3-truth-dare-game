@@ -25,7 +25,6 @@ export const usePlayerStore = defineStore('PlayerStore', {
         },
         activatePlayer(oldPlayer) {
             const oldIndex = this.players.indexOf(oldPlayer);
-            console.log('#####oldIndex', oldIndex);
             if (oldIndex < this.players.length - 1 && oldIndex != -1) {
                 const newIndex = oldIndex + 1;
                 this.playerActive = this.players[newIndex].name;
@@ -87,12 +86,9 @@ export const usePlayerStore = defineStore('PlayerStore', {
             });
         },
         addTotalScores(score) {
-            console.log('newScore', score);
             this.players.map((player) => {
                 if (player.name === this.playerActive) {
                     let index = this.players.indexOf(player);
-                    console.log(this.players.length, 'this.players.length|||||||####');
-                    console.log(this.totalScores.length, 'scores.length|||||||####');
                     if (this.totalScores.length < this.players.length) {
                         if (typeof this.totalScores[index] === 'undefined') {
                             this.totalScores.splice(
@@ -112,14 +108,12 @@ export const usePlayerStore = defineStore('PlayerStore', {
             });
         },
         setWinner() {
-            console.log('set winner was called');
             const highestScore = Math.max(...this.totalScores.map((score) => score.score));
             const winner = this.totalScores.find((score) => {
                 if (score.score === highestScore) {
                     return score.name;
                 }
             });
-            console.log('#####winner', winner);
             this.players.map((player) => {
                 if (player.name === winner.name) {
                     player.isWinner = true;
@@ -134,7 +128,6 @@ export const usePlayerStore = defineStore('PlayerStore', {
                     tmp.push(score);
                 }
             });
-            console.log('#####isDraw', tmp);
             if (tmp.length > 1) {
                 this.winnerName = '';
             }

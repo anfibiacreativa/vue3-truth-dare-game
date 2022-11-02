@@ -28,14 +28,12 @@ export const useCardStore = defineStore('CardStore', {
             }
             catch (error) {
                 this.error = error;
-                console.log(error);
             } finally {
                 this.isLoading = false;
             }
         },
         endGame(players) {
             if ((this.totalCardsPlayed.length === players * 3) && !this.isChallengeActive) {
-                console.log('####endGame');
                 this.isGameOn = false;
                 setTimeout(() => {
                     this.isGameOver = true;
@@ -50,14 +48,11 @@ export const useCardStore = defineStore('CardStore', {
                 this.isGameOn = true;
             }
             this.totalCardsPlayed.push(card);
-            console.log('####totalCardsPlayed', this.totalCardsPlayed.length);
         },
         setCardisChallenge() {
-            console.log('setCardisChallenge before', this.isChallengeActive);
             this.isChallengeActive = true;
         },
         unsetCardisChallenge() {
-            console.log('unsetCardisChallenge before', this.isChallengeActive);
             this.isChallengeActive = false;
         }
     }
