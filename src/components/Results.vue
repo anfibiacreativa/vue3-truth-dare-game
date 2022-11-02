@@ -23,8 +23,8 @@ function startOver() {
                 <span> {{ score.score }}</span>
             </li>
         </ul>
-        <p class="winner info" v-if="this.winnerName !== ''">🏆 And the winner is: {{ winnerName }} 🏆</p>
-        <p class="error info" v-if="this.winnerName === ''">There has been a draw!</p>
+        <p class="winner info" v-if="winnerName !== ''">🏆 And the winner is: {{ winnerName }} 🏆</p>
+        <p class="error info" v-if="winnerName === ''">There has been a draw!</p>
         <button class="button play" @click="startOver">Play again</button>
     </section>
 </template>

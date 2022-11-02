@@ -126,9 +126,18 @@ export const usePlayerStore = defineStore('PlayerStore', {
                     this.winnerName = winner.name;
                 } else {
                     player.isWinner = false;
-                    console.log('#####winnerName', this.winnerName);
                 }
             });
+            let tmp = [];
+            const isDraw = this.totalScores.map((score) =>{ 
+                if (score.score === highestScore) {
+                    tmp.push(score);
+                }
+            });
+            console.log('#####isDraw', tmp);
+            if (tmp.length > 1) {
+                this.winnerName = '';
+            }
         }
     }
 });
