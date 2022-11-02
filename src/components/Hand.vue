@@ -55,9 +55,9 @@ function fail(e) {
         <div v-for="score in player.round.score" class="result" v-bind:class="score === 1 ? 'green': 'red'"></div>
     </div>
     <div v-if="playerActive === player.name" class="info challenge">{{ challenge.text }}</div>
-    <div v-if="playerActive === player.name" class="action-panel">
-        <a href="#" role="button" class="action"  @click="succeed">Succeeded!</a>
-        <a href="#" role="button" class="action" @click="fail">Failed :(</a>
+    <div v-if="playerActive === player.name && challenge.active" class="action-panel">
+        <button class="button action"  @click="succeed">Succeeded!</button>
+        <button class="button action" @click="fail">Failed :(</button>
     </div>
 </template>
 

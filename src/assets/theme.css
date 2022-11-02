@@ -226,6 +226,13 @@ input[name="card-box"]{
   bottom: 0px;
 }
 
+.button.action {
+  height: 25px;
+  padding: 0 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
 .button.play {
   height: 5vh;
 }
@@ -366,7 +373,7 @@ span.active {
 
 .action-panel {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   position: absolute;
   width: 100%;
   bottom: -30px;
