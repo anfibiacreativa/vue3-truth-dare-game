@@ -19,7 +19,7 @@ export const useCardStore = defineStore('CardStore', {
     actions: {
         // get all the cards
         async fetchCards(url, body) {
-            this.loading = true;
+            this.isLoading = true;
             try {
                 this.cards = await axios.post(url, body)
                     .then(response => {
@@ -30,7 +30,7 @@ export const useCardStore = defineStore('CardStore', {
                 this.error = error;
                 console.log(error);
             } finally {
-                this.loading = false;
+                this.isLoading = false;
             }
         },
         endGame(players) {
