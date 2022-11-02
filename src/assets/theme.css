@@ -387,3 +387,8 @@ a.action {
 .halloffame h2 {
   color: var(--vt-c-indigo-highlights);
 }
+
+.page-title {
+  text-align: center;
+  color: var(--vt-c-indigo-highlights);
+}

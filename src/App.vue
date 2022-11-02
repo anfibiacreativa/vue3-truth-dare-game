@@ -1,5 +1,4 @@
 <script setup>
-import GetCards from './components/GetCards.vue';
 import { useCardStore } from '@/stores/CardStore';
 import PlayerList from './components/PlayerList.vue';
 import CardList from './components/CardList.vue';
@@ -12,6 +11,7 @@ useCardStore();
   </header>
   <main class="main">
     <section class="section play">
+      <h1 class="page-title">Welcome to our Truth and Dare Game</h1>
       <CardList />
     </section>
     <section class="section stats">

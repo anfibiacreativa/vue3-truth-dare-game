@@ -17,6 +17,7 @@
 
 const { players, playerActive, challenge } = storeToRefs(usePlayerStore());
 const { unsetCardisChallenge, resetCards, endGame } = useCardStore();
+const { setWinner } = usePlayerStore();
 
 const { 
     deactivatePlayer,
@@ -31,6 +32,7 @@ function resetGame(player) {
     unsetCardisChallenge();
     resetCards();
     endGame(totalPlayers);
+    setWinner();
 }
 
 function succeed(e) {

@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia';
-import { shouldTransformRef } from 'vue/compiler-sfc';
 
 export const usePlayerStore = defineStore('PlayerStore', {
     state: () => ({
         players: [],
         playerActive: '',
         isEmpty: true,
+        winnerName: '',
         challenge: {
             playerActive: '',
             text: '',
@@ -110,7 +110,6 @@ export const usePlayerStore = defineStore('PlayerStore', {
                     }
                 } 
             });
-            console.log('#####totalScore', [this.totalScores]);
         },
         setWinner() {
             console.log('set winner was called');
@@ -122,8 +121,12 @@ export const usePlayerStore = defineStore('PlayerStore', {
             });
             console.log('#####winner', winner);
             this.players.map((player) => {
-                if (player.name === winner) {
+                if (player.name === winner.name) {
                     player.isWinner = true;
+                    this.winnerName = winner.name;
+                } else {
+                    player.isWinner = false;
+                    console.log('#####winnerName', this.winnerName);
                 }
             });
         }
