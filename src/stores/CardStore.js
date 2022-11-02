@@ -34,9 +34,12 @@ export const useCardStore = defineStore('CardStore', {
             }
         },
         endGame(players) {
-            if ((this.totalCardsPlayed.length / players) === 3 && !this.isChallengeActive) {
+            if ((this.totalCardsPlayed.length === players * 3) && !this.isChallengeActive) {
                 console.log('####endGame');
-                this.isGameOver = true;
+                this.isGameOn = false;
+                setTimeout(() => {
+                    this.isGameOver = true;
+                }, 1000);
             }
         },
         resetCards() {
