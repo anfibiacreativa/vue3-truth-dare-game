@@ -94,9 +94,16 @@ _Should you run into any issues, you can try reinstalling Playwright with `npm i
 
 As explained in Playwright documentation, you can use [Codegen](https://playwright.dev/docs/codegen) to generate tests, as you browse the application and interact with the user interface.
 
-Because you are inside of a container with a Linux Debian OS, we have to install a browser. We have included some library scripts in the repo, that allow us to test our application end-to-end with [Playwright](). 
+Because you are inside of a container with a Linux Debian OS, we have to install a browser to make that possible. We have included some library scripts in the repo, that allows us to test our application end-to-end with [Playwright]() and generate the tests with Codegen. You can see the script [here](./.devcontainer/library-scripts/desktop-lite-debian.sh).
 
-You can see the script [here](./.devcontainer/library-scripts/desktop-lite-debian.sh).
+We have also extended `devcontainer.json`, forwarding the ports `[6080, 5901]` adding additional required configuration
+
+```
+"runArgs": ["--init", "--shm-size=1g"],
+"overrideCommand": false
+```
+
+
 
 Once you run `npx playwright codegen http://localhost:4280` (or the port the Codespace has started your app at!), you will need to open the freshly installed browser. By default, it starts on port 6080. You will be able to open it from the `Ports` tab, clicking on the right process, or you can paste `http://localhost:6080` in your browser URL bar. That will star the brwoser and require a password. 
 
