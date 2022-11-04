@@ -11,7 +11,6 @@ You can fork this repo to play with [Codespaces](https://github.com/features/cod
 Please make sure you have the following technologies installed
 - [Node.js](https://nodejs.org/en/) LTS
 - [npm](https://docs.npmjs.com/cli/v6)
-- 
 - [VSCode](https://code.visualstudio.com/) with the following extensions:
     - [GitHub Codespaces](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces)
 
@@ -89,7 +88,7 @@ to run the example tests and get started, and
 
 `npx playwright show-report` to show the report.
 
-_Should you run into any issues, you can try reinstalling Playwright with `npm install playwright` and the necessary dependencies. You will be prompted to do so in the console, if required. 
+_Should you run into any issues, you can try reinstalling Playwright with `npm install playwright` and the necessary dependencies. You will be prompted to do so in the console, if required._ 
 
 ### Using codegen to generate tests
 
@@ -106,6 +105,7 @@ The password is : 'vscode'
 ## Committing changes
 
 To push your development changes to the Codespace, you can always commit, push and sync your changes.
+You can learn more, following [this link](https://docs.github.com/en/codespaces/developing-in-codespaces/using-source-control-in-your-codespace)
 
 ## Deploying your app to Azure
 
