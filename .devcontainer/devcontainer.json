@@ -23,6 +23,7 @@
 				"ms-azuretools.vscode-azurestaticwebapps",
 				"ms-dotnettools.csharp",
 				"ms-python.python",
+				"GitHub.codespaces",
 				"dbaeumer.vscode-eslint"
 			]
 		}
