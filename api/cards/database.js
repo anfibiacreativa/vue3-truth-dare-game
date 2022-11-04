@@ -12,7 +12,7 @@ async function dbConnect(log) {
         });
         
         await mongoose.connect(
-            process.env.COSMOS_DB_CONNECTION_STRING, 
+            process.env['CosmosDbConnectionString'], 
             { 
                 dbName: 'TruthorDare',
                 useNewUrlParser: true,

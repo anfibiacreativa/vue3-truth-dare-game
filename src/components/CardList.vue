@@ -24,8 +24,7 @@
     function getCardList(e) {
         setActivePlayer();
         let type = e.target.value;
-        let param = 'type=';
-        fetchCards(url, `${param}${type}`).then(() => {
+        fetchCards(url, type).then(() => {
             console.log({ cards, isLoading, error }, '#cards, loading, error');
         }).catch(err => {
             throw new Error(err);

@@ -1,0 +1,708 @@
+[{
+  "_id": {
+    "$oid": "6357baf30b66ce79125494e1"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's something you never told your best friend about you"
+},{
+  "_id": {
+    "$oid": "6357bb830b66ce79125494e2"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "When was the last time you lied?"
+},{
+  "_id": {
+    "$oid": "6357bba80b66ce79125494e3"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "When was the last time you cried?"
+},{
+  "_id": {
+    "$oid": "6357bbb70b66ce79125494e4"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What is your greatest fear?"
+},{
+  "_id": {
+    "$oid": "6357bbd40b66ce79125494e5"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What is the dumbest reason why you quit a hobby?"
+},{
+  "_id": {
+    "$oid": "6357bbea0b66ce79125494e6"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What was something very expensive you bought and you regret it?"
+},{
+  "_id": {
+    "$oid": "6357bc050b66ce79125494e7"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "If you could swap places with somebody, who would that be?"
+},{
+  "_id": {
+    "$oid": "6357bc270b66ce79125494e8"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's your recurring fantasy?"
+},{
+  "_id": {
+    "$oid": "6357bc410b66ce79125494e9"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Have you ever betrayed somebody?"
+},{
+  "_id": {
+    "$oid": "6357bc550b66ce79125494ea"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Have you been unfaithful?"
+},{
+  "_id": {
+    "$oid": "6357bc650b66ce79125494eb"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the worst thing you've done in your life?"
+},{
+  "_id": {
+    "$oid": "6357bc800b66ce79125494ec"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the most embarrassing thing you've ever done?"
+},{
+  "_id": {
+    "$oid": "6357bc9c0b66ce79125494ed"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's your greatest insecurity?"
+},{
+  "_id": {
+    "$oid": "6357bcb80b66ce79125494ee"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Do you have a secret you never told anyone?"
+},{
+  "_id": {
+    "$oid": "6357bcd50b66ce79125494ef"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Do you have a hidden talen?"
+},{
+  "_id": {
+    "$oid": "6357bce40b66ce79125494f0"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Have you had a famous crush?"
+},{
+  "_id": {
+    "$oid": "6357bcfb0b66ce79125494f1"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Do you have a crush?"
+},{
+  "_id": {
+    "$oid": "6357bd870b66ce79125494f6"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Do you have a best friend?"
+},{
+  "_id": {
+    "$oid": "6357bdaf0b66ce79125494f7"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Is there any truth you wish you never confessed?"
+},{
+  "_id": {
+    "$oid": "6357bdd40b66ce79125494f8"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the best piece of advise you've ever gotten?"
+},{
+  "_id": {
+    "$oid": "6357bdf60b66ce79125494f9"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's your guilty pleasure?"
+},{
+  "_id": {
+    "$oid": "6357be0a0b66ce79125494fa"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Who gave you the worst kiss?"
+},{
+  "_id": {
+    "$oid": "6357be1d0b66ce79125494fb"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Have you copied in an exam?"
+},{
+  "_id": {
+    "$oid": "6357be300b66ce79125494fc"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the most drunk you've ever been, if ever?"
+},{
+  "_id": {
+    "$oid": "6357be460b66ce79125494fd"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Have you befriended somebody out of interest?"
+},{
+  "_id": {
+    "$oid": "6357be650b66ce79125494fe"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's been your worst screw up at work?"
+},{
+  "_id": {
+    "$oid": "6357be7b0b66ce79125494ff"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's been your worst screw up with friends?"
+},{
+  "_id": {
+    "$oid": "6357be900b66ce7912549500"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the grossest thing you've ever done?"
+},{
+  "_id": {
+    "$oid": "6357bea20b66ce7912549501"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the worst thing somebody ever did to you?"
+},{
+  "_id": {
+    "$oid": "6357bebb0b66ce7912549502"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the best thing somebody ever did for you?"
+},{
+  "_id": {
+    "$oid": "6357becb0b66ce7912549503"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's your worst habit?"
+},{
+  "_id": {
+    "$oid": "6357bed90b66ce7912549504"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the most embarrassing thing you've done in public?"
+},{
+  "_id": {
+    "$oid": "6357beec0b66ce7912549505"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's something most people can do that you're afraid of?"
+},{
+  "_id": {
+    "$oid": "6357bf050b66ce7912549506"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the most hurtful thing you've told somebody?"
+},{
+  "_id": {
+    "$oid": "6357bf1a0b66ce7912549507"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the strangest dream you've ever had?"
+},{
+  "_id": {
+    "$oid": "6357bf320b66ce7912549508"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the worst date you've had?"
+},{
+  "_id": {
+    "$oid": "6357bf4d0b66ce7912549509"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's your biggest regret?"
+},{
+  "_id": {
+    "$oid": "6357bf5a0b66ce791254950a"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the worst lie that's been told about you?"
+},{
+  "_id": {
+    "$oid": "6357bf7b0b66ce791254950b"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What would you like people to know about you?"
+},{
+  "_id": {
+    "$oid": "6357bf910b66ce791254950c"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What would be your walk onstage song if you would have to walk onstage?"
+},{
+  "_id": {
+    "$oid": "6357bfac0b66ce791254950d"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Is there anything you would rather people never knew about you?"
+},{
+  "_id": {
+    "$oid": "6357bfc10b66ce791254950e"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Have you ever ghosted somebody online?"
+},{
+  "_id": {
+    "$oid": "6357bfdc0b66ce791254950f"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Do you use social media too much?"
+},{
+  "_id": {
+    "$oid": "6357bfe90b66ce7912549510"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Have you ever drunk tweeted?"
+},{
+  "_id": {
+    "$oid": "6357bff60b66ce7912549511"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Would you go back with one of your exes?"
+},{
+  "_id": {
+    "$oid": "6357c00a0b66ce7912549512"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "If you would have to choose a friend to be out of your life, who would that be?"
+},{
+  "_id": {
+    "$oid": "6357c0320b66ce7912549513"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Do you have a favorite sibling?"
+},{
+  "_id": {
+    "$oid": "6357c0450b66ce7912549514"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What's the funniest gossip you've heard about you?"
+},{
+  "_id": {
+    "$oid": "6357c0540b66ce7912549515"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What makes you really happy?"
+},{
+  "_id": {
+    "$oid": "6357c05f0b66ce7912549516"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "What makes you really sad?"
+},{
+  "_id": {
+    "$oid": "6357c06e0b66ce7912549517"
+  },
+  "type": "1",
+  "title": "Truth",
+  "text": "Have you ever been caught doing something you shouldn't?"
+},{
+  "_id": {
+    "$oid": "6357c0830b66ce7912549518"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Show the most embarrassing picture of yourself you have in your phone."
+},{
+  "_id": {
+    "$oid": "6357c0c80b66ce7912549519"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Show the last 5 texts you've sent."
+},{
+  "_id": {
+    "$oid": "6357c1060b66ce791254951a"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Make a funny face and stay like that for 2 minutes."
+},{
+  "_id": {
+    "$oid": "6357c1320b66ce791254951b"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Pretend to be the last person you texted, while reading their messages."
+},{
+  "_id": {
+    "$oid": "6357c1470b66ce791254951c"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Eat something without using your hands."
+},{
+  "_id": {
+    "$oid": "6357c1550b66ce791254951d"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Cotweet with somebody you don't like very much."
+},{
+  "_id": {
+    "$oid": "6357c1890b66ce791254951e"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Eat a clove of raw garlic."
+},{
+  "_id": {
+    "$oid": "6357c19f0b66ce791254951f"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Do 100 squats in a row."
+},{
+  "_id": {
+    "$oid": "6357c1c10b66ce7912549520"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Try to lick your elbow."
+},{
+  "_id": {
+    "$oid": "6357c1f40b66ce7912549521"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Dance without music for 3 minutes."
+},{
+  "_id": {
+    "$oid": "6357c2060b66ce7912549522"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Tell two truths and one lie so we have to figure out what's a lie about you."
+},{
+  "_id": {
+    "$oid": "6357c22e0b66ce7912549523"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Show your screentime for this week."
+},{
+  "_id": {
+    "$oid": "6357c2450b66ce7912549524"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Whisper for the next 10 minutes (reading this page from a book)."
+},{
+  "_id": {
+    "$oid": "6357c25d0b66ce7912549525"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Shout the first word that comes to your mind."
+},{
+  "_id": {
+    "$oid": "6357c2740b66ce7912549526"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Let somebody tickle you and don't laugh."
+},{
+  "_id": {
+    "$oid": "6357c2850b66ce7912549527"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Like the first 3 tweets in your timeline (providing they're not offensive/political, etc)"
+},{
+  "_id": {
+    "$oid": "6357c2bb0b66ce7912549528"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Eat a full spoon of mustard."
+},{
+  "_id": {
+    "$oid": "6357c2d00b66ce7912549529"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Keep your eyes closed for 10 minutes."
+},{
+  "_id": {
+    "$oid": "6357c2e20b66ce791254952a"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Do the first Tik-Tok dance you come across."
+},{
+  "_id": {
+    "$oid": "6357c2f90b66ce791254952b"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Tell something smug to everyone else playing this game."
+},{
+  "_id": {
+    "$oid": "6357c3120b66ce791254952c"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Show us the contents of your wallet."
+},{
+  "_id": {
+    "$oid": "6357c3230b66ce791254952d"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Show all the apps installed in your phone."
+},{
+  "_id": {
+    "$oid": "6357c3330b66ce791254952e"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Tell a dad joke."
+},{
+  "_id": {
+    "$oid": "6357c3470b66ce791254952f"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Eat a piece of raw onion."
+},{
+  "_id": {
+    "$oid": "6357c3540b66ce7912549530"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Tell a truth about everyone playing this game."
+},{
+  "_id": {
+    "$oid": "6357c3650b66ce7912549531"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Let somebody put make up on you."
+},{
+  "_id": {
+    "$oid": "6357c3720b66ce7912549532"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Speak with French accent for 3 minutes."
+},{
+  "_id": {
+    "$oid": "6357c3830b66ce7912549533"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Speak with German accent for 3 minutes. (If you're German, make it French accent)"
+},{
+  "_id": {
+    "$oid": "6357c3d30b66ce7912549534"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Imitate a famous person."
+},{
+  "_id": {
+    "$oid": "6357c3e20b66ce7912549535"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Imitate your best friend."
+},{
+  "_id": {
+    "$oid": "6357c3ec0b66ce7912549536"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Imitate your partner."
+},{
+  "_id": {
+    "$oid": "6357c3f90b66ce7912549537"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Publish a very old photo in your phone, to Instagram."
+},{
+  "_id": {
+    "$oid": "6357c40c0b66ce7912549538"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Make monkey sounds."
+},{
+  "_id": {
+    "$oid": "6357c4150b66ce7912549539"
+  },
+  "type": "2",
+  "title": "Dare",
+  "text": "Howl like a wolf for 30 seconds."
+},{
+  "_id": {
+    "$oid": "6363a94b354044291cd96cf5"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "Have you ever deployed on a Friday?"
+},{
+  "_id": {
+    "$oid": "6363a998354044291cd96cf7"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "Have you ever broken Prod?"
+},{
+  "_id": {
+    "$oid": "6363a9a7354044291cd96cf8"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "Have you ever dropped the Prod database?"
+},{
+  "_id": {
+    "$oid": "6363a9b8354044291cd96cf9"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "What's the test coverage of your current side project?"
+},{
+  "_id": {
+    "$oid": "6363a9da354044291cd96cfa"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "What's your favorite programming language?"
+},{
+  "_id": {
+    "$oid": "6363a9f4354044291cd96cfb"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "What's your favorite JavaScript framework?"
+},{
+  "_id": {
+    "$oid": "6363aa05354044291cd96cfc"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "How many hours off were you for your last task estimation?"
+},{
+  "_id": {
+    "$oid": "6363aa37354044291cd96cfe"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "If you were not a programmer what would you be?"
+},{
+  "_id": {
+    "$oid": "6363aa4e354044291cd96cff"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "What's the git command you love the most?"
+},{
+  "_id": {
+    "$oid": "6363aa60354044291cd96d00"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "What's the git command that you could never really understand?"
+},{
+  "_id": {
+    "$oid": "6363aa73354044291cd96d01"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "What's your favorite movie genre?"
+},{
+  "_id": {
+    "$oid": "6363aa93354044291cd96d02"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "What do you love more...coffee or tea?"
+},{
+  "_id": {
+    "$oid": "6363aaad354044291cd96d04"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "SQL or No SQL?"
+},{
+  "_id": {
+    "$oid": "6363aabf354044291cd96d05"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "Typescript or JavaScript?"
+},{
+  "_id": {
+    "$oid": "6363aacd354044291cd96d06"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "What's a technology you wish you knew but think would be really hard to learn?"
+},{
+  "_id": {
+    "$oid": "6363aae5354044291cd96d07"
+  },
+  "type": 1,
+  "title": "Truth",
+  "text": "Tabs or spaces?"
+}]

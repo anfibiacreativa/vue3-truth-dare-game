@@ -5,6 +5,7 @@ export const useCardStore = defineStore('CardStore', {
     state: () => ({
         cards: [],
         totalCardsPlayed: [],
+        cardsToRemove: [],
         isLoading: false,
         error: null,
         isChallengeActive: false,
@@ -18,10 +19,14 @@ export const useCardStore = defineStore('CardStore', {
     },
     actions: {
         // get all the cards
-        async fetchCards(url, body) {
+        async fetchCards(url, type) {
             this.isLoading = true;
+            this.totalCardsPlayed.map((card) => { 
+                this.cardsToRemove.push(card._id);
+            });
+            const projection = this.cardsToRemove;
             try {
-                this.cards = await axios.post(url, body)
+                this.cards = await axios.post(url, { type, projection })
                     .then(response => {
                         return response.data;
                     })

@@ -5,7 +5,8 @@ module.exports = async function(context) {
     await dbConnect(context.log);
 
     let body = context.bindings.req.body;
-    let type = body.split('=')[1];
+    let type = Number(body.type);
+    let projection = body.projection;
     try {
         if (!type) {
             console.log('no type');
@@ -26,7 +27,7 @@ module.exports = async function(context) {
     // using skip to randomize because $sample is not working as expected :(
     let skip = Math.floor(Math.random() * 30) + 1;
     let query = await cardModel.aggregate([
-        { $match: { type: type } },
+        { $match: { type: type, _id: { $nin: projection } } },
         { $skip: skip }
     ]).limit(9).exec();   
     context.res = {
