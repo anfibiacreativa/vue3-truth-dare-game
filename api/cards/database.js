@@ -10,11 +10,13 @@ async function dbConnect(log) {
         db.on('connected', () => { 
             log('Connection Successful. Hooray! 🎉')
         });
-        
+        const DB_NAME = 'TruthorDare';
+        console.log('Is this a codespace? >>>>>', process.env.CODESPACES);
+        const CONNECTION_STRING = process.env.CODESPACES ? process.env.COSMOS_DB_CONNECTION_STRING : process.env['CosmosDbConnectionString'];
         await mongoose.connect(
-            process.env['CosmosDbConnectionString'], 
+            CONNECTION_STRING,
             { 
-                dbName: 'TruthorDare',
+                dbName: DB_NAME,
                 useNewUrlParser: true,
                 useUnifiedTopology: true
             }
