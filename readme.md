@@ -90,6 +90,10 @@ to run the example tests and get started, and
 
 _Should you run into any issues, you can try reinstalling Playwright with `npm install playwright` and the necessary dependencies. You will be prompted to do so in the console, if required._ 
 
+`npx install-deps`
+
+_Please notice that this may take a while, depending on your container type_
+
 ### Using codegen to generate tests
 
 As explained in Playwright documentation, you can use [Codegen](https://playwright.dev/docs/codegen) to generate tests, as you browse the application and interact with the user interface.
