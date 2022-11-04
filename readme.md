@@ -113,6 +113,8 @@ You can further leverage the Azure Static Web Apps CLI, to deploy your app to Az
 
 `swa deploy` in the terminal, and follow the prompts. The CLI will make sure your app and Azure Functions are deployed and you will be able to see your published site, in a few moments!
 
+You can then setup your [GitHub Actions](https://github.com/features/actions), and your CI/CD pipeline, to continue to deploy to Azure, when committing and pushing changes to your designated branch.
+
 
 
 
