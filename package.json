@@ -12,7 +12,9 @@
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@azure/static-web-apps-cli": "^1.0.3",
     "@lerna-lite/cli": "^1.6.0",
+    "@playwright/test": "^1.27.1",
     "@vitejs/plugin-vue": "^2.3.3",
     "vite": "^2.9.12"
   }

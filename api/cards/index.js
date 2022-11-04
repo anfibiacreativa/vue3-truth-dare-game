@@ -22,17 +22,18 @@ module.exports = async function(context) {
             body: `Sorry. There was an error processing your request: ${err}`
         };
         process.exit(1);
-    } 
-    let find = await cardModel.aggregate([
+    }
+    // using skip to randomize because $sample is not working as expected :(
+    let skip = Math.floor(Math.random() * 30) + 1;
+    let query = await cardModel.aggregate([
         { $match: { type: type } },
-        { $sample: { size: 100 } }
-    // figure out how to sample 9 cards from the database
+        { $skip: skip }
     ]).limit(9).exec();   
     context.res = {
         status: 200,
         header: {
             "Content-Type": "application/json"
         },
-        body: find
+        body: query
     };
 }
