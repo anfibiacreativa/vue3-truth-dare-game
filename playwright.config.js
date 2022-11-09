@@ -44,6 +44,10 @@ const config = {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     // All requests we send go to this API endpoint.
+    baseURL: 'http://localhost:7071',
+    extraHTTPHeaders: {
+      'Accept': 'application/json',
+    },
   },
 
   /* Configure projects for major browsers */
