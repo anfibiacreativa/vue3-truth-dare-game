@@ -128,7 +128,11 @@ _If you're having trouble with this command and authentication, you may need to 
 
 ** For more troubleshooting guidelines, please go to [the SWA CLI documentation](https://azure.github.io/static-web-apps-cli/docs/contribute/Troubleshooting/#solutions)
 
+## CI/CD 
+
 You can then setup your [GitHub Actions](https://github.com/features/actions), and your CI/CD pipeline, to continue to deploy to Azure, when committing and pushing changes to your designated branch.
+
+An example can be found in the `feature/add-tests` branch in this repo.
 
 
 
